@@ -1,7 +1,4 @@
 package model;
-
-import java.util.ArrayList;
-
 public class HangMan {
 
 
@@ -10,14 +7,14 @@ public class HangMan {
     private String wordToFind;
     private char[] wordToGuess;
     private int wrongGuessAmount;
-    private ArrayList<String> letters;
+    private StringBuilder letters;
 
 
     public HangMan(String wordToFind) {
         this.guessedLetters = new StringBuilder();
         this.wordToFind = wordToFind;
         this.wordToGuess = new char [0];
-        this.letters = new ArrayList<>();
+        this.letters = new StringBuilder();
         this.wrongGuessAmount = 1;
         this.maxGuesses = 8;
     }
@@ -47,13 +44,6 @@ public class HangMan {
         return wordToGuess;
     }
 
-    public ArrayList<String> getLetters() {
-        return letters;
-    }
-
-    public void setLetters(ArrayList<String> letters) {
-        this.letters = letters;
-    }
 
     public void newGame() {
 
@@ -85,9 +75,11 @@ public class HangMan {
     }
 
 
+
+
     public void enterUserLetter(String c) {
 
-        if (!letters.contains(c)) {
+        if (!letters.toString().contains(c)) {
             if (wordToFind.contains(c)||wordToFind.equalsIgnoreCase(c)) {
                 int index = wordToFind.indexOf(c);
                 guessedLetters.append("[" + c + "]");
@@ -101,7 +93,7 @@ public class HangMan {
                 wrongGuessAmount++;
                 guessedLetters.append("[" + c + "]");
             }
-            letters.add(c);
+            letters.append(c);
         }
 
     }
