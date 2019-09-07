@@ -9,7 +9,7 @@ public static HangMan hangmanGame = new HangMan(SecretWordGenerator.chooseSecret
 
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Hangman");
+        System.out.println("Welcome to Hangman\nEnter a letter, or an entire word, with all letters separated by spaces (E X A M P L E): ");
         hangmanGame.newGame();
         App.play();
     }
@@ -18,7 +18,7 @@ public static HangMan hangmanGame = new HangMan(SecretWordGenerator.chooseSecret
         try (Scanner input = new Scanner(System.in)) {
 
             while (hangmanGame.getWrongGuessAmount() < hangmanGame.getMaxGuesses()) {
-                System.out.println("\nEnter a letter : \nOr an entire word, with all letters separated by spaces (E X A M P L E): ");
+                System.out.println("Enter next guess: ");
 
                 String str = input.next().toUpperCase();
 
@@ -52,6 +52,10 @@ public static HangMan hangmanGame = new HangMan(SecretWordGenerator.chooseSecret
 
 
 }
+
+
+
+
 
 
 
