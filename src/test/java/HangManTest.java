@@ -18,13 +18,13 @@ public class HangManTest {
         Assert.assertArrayEquals(expected,testObject.newGame());
     }
 
-    @Test
+   @Test
     public void testEnterUserLetter (){
         String test = "x";
-        testObject.enterUserLetter(test);
-        String expected = "[x]";
+        String expected = testObject.enterUserLetter(test);
         Assert.assertEquals(expected,testObject.getGuessedLetters().toString());
     }
+
 
     @Test
     public void test_Word_To_Guess_Content(){
