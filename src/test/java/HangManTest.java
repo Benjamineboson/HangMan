@@ -15,8 +15,7 @@ public class HangManTest {
     @Test
     public void testNewGame (){
         char[] expected = {'_','_','_','_','_','_'};
-        testObject.newGame();
-        Assert.assertArrayEquals(expected,testObject.getWordToGuess());
+        Assert.assertArrayEquals(expected,testObject.newGame());
     }
 
     @Test
@@ -25,6 +24,13 @@ public class HangManTest {
         testObject.enterUserLetter(test);
         String expected = "[x]";
         Assert.assertEquals(expected,testObject.getGuessedLetters().toString());
+    }
+
+    @Test
+    public void test_Word_To_Guess_Content(){
+        String expected = "";
+        String actual = testObject.wordToGuessContent();
+        Assert.assertEquals(expected,actual);
     }
 
 }
