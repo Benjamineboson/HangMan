@@ -47,7 +47,7 @@ public class HangMan {
         return sb.toString();
     }
 
-    public void enterUserLetter(String c) {
+    public String enterUserLetter(String c) {
         if (!letters.toString().contains(c)) {
             if (wordToFind.contains(c)||wordToFind.equalsIgnoreCase(c)) {
                 int index = wordToFind.indexOf(c);
@@ -62,5 +62,6 @@ public class HangMan {
             }
             letters.append(c);
         }
+        return guessedLetters.toString();
     }
 }
