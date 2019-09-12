@@ -26,11 +26,12 @@ public class HangMan {
 
     public char[] getWordToGuess() {return wordToGuess;}
 
-    public void newGame() {
+    public char[] newGame() {
      this.wordToGuess = new char[getWordToFind().length()];
         for (int i = 0; i < wordToGuess.length; i++) {
             wordToGuess[i] = '_';
         }
+        return wordToGuess;
     }
 
     public boolean isWordFound() {return wordToFind.contentEquals(new String(wordToGuess));}
